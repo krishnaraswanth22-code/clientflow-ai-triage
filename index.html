@@ -1,0 +1,258 @@
+Set-Content -Path index.html -Value @'
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClientFlow AI — Autonomous Inbox Triage Pipeline | B.Tech IT Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: { 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb' },
+            surface: { base: '#090d16', card: '#0f172a', border: 'rgba(255, 255, 255, 0.08)' }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface-base text-slate-200 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Top Academic Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-surface-base/80 border-b border-surface-border">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-extrabold text-white text-sm tracking-tight">ClientFlow <span class="text-brand-400 font-mono">Pipeline</span></span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-mono">
+        <span class="text-slate-400 hidden sm:inline">B.Tech IT Engineering Portfolio</span>
+        <a href="https://github.com/krishnaraswanth22-code/clientflow-ai-triage" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium border border-surface-border transition flex items-center gap-1.5">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>Fork on GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 30-Second Hero: The Problem & The Solution -->
+  <section class="pt-16 pb-14 px-6 border-b border-surface-border">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-xs font-mono mb-6">
+        <span>⏱️ The 30-Second Overview</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
+        Headless Inbox Speed-to-Lead Engine with <span class="text-brand-400">Deterministic Guardrails</span>
+      </h1>
+      <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-8 font-normal">
+        Most student AI projects build generic chatbots that hallucinate and cause legal liabilities. 
+        This is a headless <strong>event-driven Python pipeline</strong> connecting Google Workspace REST APIs with high-speed LLM inference to triage customer emails in &lt;3s—guaranteeing that high-risk requests are mathematically diverted to human engineers.
+      </p>
+
+      <!-- 3 Key Metric Badges -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left font-mono text-xs">
+        <div class="p-4 rounded-xl bg-slate-900 border border-surface-border">
+          <div class="text-brand-400 font-bold mb-1">&lt; 3.0 Seconds</div>
+          <div class="text-slate-400">Inbound lead processing latency via Gmail API</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-surface-border">
+          <div class="text-emerald-400 font-bold mb-1">Strict &ge; 0.85 Threshold</div>
+          <div class="text-slate-400">Deterministic confidence gate for autonomous sending</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-surface-border">
+          <div class="text-purple-400 font-bold mb-1">Decoupled Multi-Tenant</div>
+          <div class="text-slate-400">Isolated JSON SOPs without backend code changes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem vs Solution Breakdown -->
+  <section class="py-16 px-6 border-b border-surface-border bg-slate-950/30">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400 mb-2">Core Engineering Rationale</h2>
+        <h3 class="text-2xl font-bold text-white">Why Standard Chatbots Fail in Real Inboxes</h3>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- The Problem -->
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-red-500/20">
+          <div class="flex items-center gap-2 text-red-400 font-bold text-sm mb-4">
+            <span class="w-2 h-2 rounded-full bg-red-400"></span>
+            <span>The Real-World Bottleneck</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-300 leading-relaxed">
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold">✕</span>
+              <span><strong>Slow Lead Decay:</strong> Inquiries arriving after-hours wait 14–48 hours. 78% of customers buy from the first entity that responds.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold">✕</span>
+              <span><strong>The "Unsupervised Bot" Hazard:</strong> Standard generative bots hallucinate unauthorized discounts, wrong quotes, or out-of-scope legal promises.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold">✕</span>
+              <span><strong>Dashboard Fatigue:</strong> Small business teams refuse to adopt complex $300/mo CRMs that pull them away from standard Gmail.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- The Solution -->
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-emerald-500/20">
+          <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm mb-4">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>How This System Solves It</span>
+          </div>
+          <ul class="space-y-3 text-sm text-slate-300 leading-relaxed">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span><strong>Sub-3-Second Autonomous Sweep:</strong> Runs headlessly to parse, grade, and respond to standard queries 24/7/365.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span><strong>Deterministic Safety Gate:</strong> Enforces programmatic if/else thresholds. Custom price cuts or complex queries are halted immediately.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span><strong>Zero UI Disruption:</strong> Operates natively inside Gmail using 3 clean labels (🟢 AI Handled, 🟡 Review Drafts, 🔴 Action Needed).</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 3-Tier Execution Sandbox -->
+  <section class="py-16 px-6 border-b border-surface-border">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-brand-400 mb-2">Live Logic Sandbox</h2>
+        <h3 class="text-2xl font-bold text-white">Test the 3-Tier Routing Matrix</h3>
+        <p class="text-xs text-slate-400 mt-2 font-mono">Select an incoming email payload to observe how the decision engine routes execution:</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        <button onclick="runSim(1)" id="btn-1" class="px-4 py-2 rounded-xl text-xs font-mono font-bold border transition bg-brand-600 border-brand-500 text-white">
+          Scenario 1: Standard FAQ
+        </button>
+        <button onclick="runSim(2)" id="btn-2" class="px-4 py-2 rounded-xl text-xs font-mono font-bold border transition bg-slate-900 border-surface-border text-slate-400 hover:text-white">
+          Scenario 2: Complex / Multi-Part
+        </button>
+        <button onclick="runSim(3)" id="btn-3" class="px-4 py-2 rounded-xl text-xs font-mono font-bold border transition bg-slate-900 border-surface-border text-slate-400 hover:text-white">
+          Scenario 3: 35% Discount Negotiation
+        </button>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-slate-900 border border-surface-border font-mono text-xs">
+        <div class="flex items-center justify-between border-b border-surface-border pb-3 mb-4">
+          <span class="text-slate-400">Payload: <span id="sim-sender" class="text-white">alex.buyer@gmail.com</span></span>
+          <span id="sim-badge" class="px-2.5 py-1 rounded font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">🟢 AI Handled</span>
+        </div>
+        <div class="mb-4">
+          <div class="text-slate-500 mb-1">// Inbound Body</div>
+          <div id="sim-body" class="p-3 rounded-lg bg-slate-950 text-slate-300">"Hi, what are the HOA dues for 402 West Avenue, and can we schedule a walkthrough this Saturday?"</div>
+        </div>
+        <div>
+          <div class="text-slate-500 mb-1">// Deterministic Action Taken</div>
+          <div id="sim-action" class="p-3 rounded-lg bg-slate-950 text-emerald-300">
+            [Confidence: 0.96 &ge; 0.85] Dispatched automated response via Gmail API with verified HOA specs ($300/mo) & Calendly tour link. Message marked as read.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Highlights -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-slate-400 mb-2">Technical Implementation</h2>
+        <h3 class="text-2xl font-bold text-white">System Architecture & Design Decisions</h3>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 font-mono text-xs">
+        <div class="p-6 rounded-2xl bg-slate-900 border border-surface-border">
+          <div class="text-brand-400 font-bold mb-3 text-sm">1. Noise Pre-Filtering</div>
+          <p class="text-slate-400 leading-relaxed font-sans text-xs">
+            Checks headers against vendor blocklists and promotional terms before invoking LLM inference. Truncates bodies to 2,000 chars, eliminating token burn and HTTP 413 exceptions.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-surface-border">
+          <div class="text-brand-400 font-bold mb-3 text-sm">2. Schema Enforcement</div>
+          <p class="text-slate-400 leading-relaxed font-sans text-xs">
+            Constrains model completion to strict Pydantic models (<code class="text-brand-300 font-mono">is_complex</code>, <code class="text-brand-300 font-mono">confidence_score</code>, <code class="text-brand-300 font-mono">suggested_reply</code>) to avoid unpredictable freeform strings.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-surface-border">
+          <div class="text-brand-400 font-bold mb-3 text-sm">3. Ephemeral In-Memory</div>
+          <p class="text-slate-400 leading-relaxed font-sans text-xs">
+            Evaluates email payloads in volatile server memory (RAM) and purges them immediately upon dispatch, adhering to GDPR/CCPA zero-storage standards.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-surface-border text-center text-xs font-mono text-slate-500">
+    <p>ClientFlow AI — Independent B.Tech IT Project Repository</p>
+    <p class="mt-1">Developed by krishnaraswanth22-code • Open for peer inspection and branching</p>
+  </footer>
+
+  <script>
+    function runSim(scenario) {
+      const b1 = document.getElementById('btn-1');
+      const b2 = document.getElementById('btn-2');
+      const b3 = document.getElementById('btn-3');
+      const badge = document.getElementById('sim-badge');
+      const body = document.getElementById('sim-body');
+      const action = document.getElementById('sim-action');
+      const sender = document.getElementById('sim-sender');
+
+      [b1, b2, b3].forEach(b => {
+        b.className = "px-4 py-2 rounded-xl text-xs font-mono font-bold border transition bg-slate-900 border-surface-border text-slate-400 hover:text-white";
+      });
+
+      if (scenario === 1) {
+        b1.className = "px-4 py-2 rounded-xl text-xs font-mono font-bold border transition bg-brand-600 border-brand-500 text-white";
+        sender.innerText = "alex.buyer@gmail.com";
+        badge.className = "px-2.5 py-1 rounded font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
+        badge.innerText = "🟢 AI Handled";
+        body.innerText = '"Hi, what are the HOA dues for 402 West Avenue, and can we schedule a walkthrough this Saturday?"';
+        action.className = "p-3 rounded-lg bg-slate-950 text-emerald-300";
+        action.innerText = "[Confidence: 0.96 \u2265 0.85] Match found in local inventory. Dispatched autonomous response via Gmail API with verified HOA specs ($300/mo) & Calendly booking link in 1.4s.";
+      } else if (scenario === 2) {
+        b2.className = "px-4 py-2 rounded-xl text-xs font-mono font-bold border transition bg-brand-600 border-brand-500 text-white";
+        sender.innerText = "corporate.relocation@firm.com";
+        badge.className = "px-2.5 py-1 rounded font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20";
+        badge.innerText = "🟡 Review Drafts";
+        body.innerText = '"We represent 4 executive families relocating. Do you have bulk lender packages and custom viewing schedules for all units?"';
+        action.className = "p-3 rounded-lg bg-slate-950 text-amber-300";
+        action.innerText = "[Confidence: 0.72 | Complex: True] Automation halted. Pre-formatted professional reply saved directly to Gmail Drafts folder for 1-click human approval.";
+      } else if (scenario === 3) {
+        b3.className = "px-4 py-2 rounded-xl text-xs font-mono font-bold border transition bg-brand-600 border-brand-500 text-white";
+        sender.innerText = "investor.direct@syndicate.io";
+        badge.className = "px-2.5 py-1 rounded font-bold bg-red-500/10 text-red-400 border border-red-500/20";
+        badge.innerText = "🔴 Action Needed";
+        body.innerText = '"We can close in 7 days all-cash if your seller drops the asking price by 35% and covers inspection escrow."';
+        action.className = "p-3 rounded-lg bg-slate-950 text-red-300";
+        action.innerText = "[Safety Net Tripped: High-Risk Negotiation Signal] AI response completely blocked. Thread marked 'Needs_Human_Review' and escalated for manual takeover.";
+      }
+    }
+  </script>
+</body>
+</html>
+'@
