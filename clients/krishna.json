@@ -1,0 +1,11 @@
+{
+    "client_id": "krishna",
+    "business_name": "Krishna",
+    "admin_email": "krishnaraswanth22@gmail.com",
+    "brokerage_region": "krish.com",
+    "booking_link": "https://calendld.com/",
+    "listings_and_hoa": "\"listing_id\": \"LEG-101\",\r\n      \"address\": \"412 Highland Meadow Drive, Round Rock, TX 78665\",\r\n      \"price\": \"$485,000\",\r\n      \"beds\": 3,\r\n      \"baths\": 2,\r\n      \"sqft\": 2150,\r\n      \"hoa_fee\": \"$55/month\",\r\n      \"school_district\": \"Round Rock ISD (specific schools unverified)\",\r\n      \"tax_info\": \"Unverified - refer to county appraisal district\",\r\n      \"status\": \"Active / Vacant\"\r\n    },\r\n    {\r\n      \"listing_id\": \"LEG-102\",\r\n      \"address\": \"402 West Avenue, Unit 1804, Austin, TX 78701\",\r\n      \"price\": \"$550,000\",\r\n      \"beds\": 2,\r\n      \"baths\": 2,\r\n      \"sqft\": 1240,\r\n      \"hoa_fee\": \"$540/month (includes reserved garage parking and pool)\",\r\n      \"school_district\": \"Austin ISD\",\r\n      \"tax_info\": \"Travis County Appraisal District\",\r\n      \"status\": \"Active\"\r\n    },\r\n    {\r\n      \"listing_id\": \"LEG-103\",\r\n      \"address\": \"2417 Barton Vista Ridge, West Lake Hills, TX 78746\",\r\n      \"price\": \"$1,875,000\",\r\n      \"beds\": 5,\r\n      \"baths\": 5,\r\n      \"sqft\": 4650,\r\n      \"hoa_fee\": \"$120/month\",\r\n      \"school_district\": \"Eanes ISD\",\r\n      \"tax_info\": \"Travis County Appraisal District\",\r\n      \"status\": \"Active / Gated (Pre-approval letter required)\"",
+    "custom_guardrails": "",
+    "trial_start_date": "2026-10-02",
+    "paid": false
+}

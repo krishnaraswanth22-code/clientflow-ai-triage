@@ -1,0 +1,20 @@
+{
+  "client_id": "client_secondary",
+  "business_name": "Secondary Pilot Realty",
+  "paid": false,
+  "trial_start_date": "2026-09-11",
+  "admin_email": "sureshkum3479@gmail.com",
+  "booking_link": "https://calendly.com/sample/tour",
+  "sample_listings": [
+    {
+      "listing_id": "SEC-101",
+      "address": "402 West Avenue",
+      "price": "$550,000",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1200,
+      "hoa_fee": "$300/month",
+      "status": "Active"
+    }
+  ]
+}

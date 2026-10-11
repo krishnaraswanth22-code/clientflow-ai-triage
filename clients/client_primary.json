@@ -1,0 +1,77 @@
+{
+  "client_id": "client_primary",
+  "paid": true,
+  "trial_start_date": "2026-09-01",
+  "business_name": "Legacy Real Estate Group",
+  "admin_email": null,
+  "timezone": "America/Chicago",
+  "business_hours": {
+    "start": "09:00",
+    "end": "18:00",
+    "work_days": [0, 1, 2, 3, 4]
+  },
+  "calendly_link": "https://calendly.com/legacy-realty/walkthrough",
+  "vendor_domains": [
+    "firstam.com",
+    "chicago-title.com",
+    "pillartopost.com",
+    "homegauge.com"
+  ],
+  "noise_patterns": [
+    "unsubscribe",
+    "no-reply@",
+    "noreply@",
+    "newsletter"
+  ],
+  "agent_to_agent_keywords": [
+    "co-listing",
+    "buyer referral",
+    "broker fee split"
+  ],
+  "sensitive_trigger_keywords": [
+    "divorce",
+    "foreclosure",
+    "passed away",
+    "urgent",
+    "lawsuit",
+    "wire fraud"
+  ],
+  "sample_listings": [
+    {
+      "listing_id": "LEG-101",
+      "address": "412 Highland Meadow Drive, Round Rock, TX 78665",
+      "price": "$485,000",
+      "beds": 3,
+      "baths": 2,
+      "sqft": 2150,
+      "hoa_fee": "$55/month",
+      "school_district": "Round Rock ISD (specific schools unverified)",
+      "tax_info": "Unverified - refer to county appraisal district",
+      "status": "Active / Vacant"
+    },
+    {
+      "listing_id": "LEG-102",
+      "address": "402 West Avenue, Unit 1804, Austin, TX 78701",
+      "price": "$550,000",
+      "beds": 2,
+      "baths": 2,
+      "sqft": 1240,
+      "hoa_fee": "$540/month (includes reserved garage parking and pool)",
+      "school_district": "Austin ISD",
+      "tax_info": "Travis County Appraisal District",
+      "status": "Active"
+    },
+    {
+      "listing_id": "LEG-103",
+      "address": "2417 Barton Vista Ridge, West Lake Hills, TX 78746",
+      "price": "$1,875,000",
+      "beds": 5,
+      "baths": 5,
+      "sqft": 4650,
+      "hoa_fee": "$120/month",
+      "school_district": "Eanes ISD",
+      "tax_info": "Travis County Appraisal District",
+      "status": "Active / Gated (Pre-approval letter required)"
+    }
+  ]
+}
