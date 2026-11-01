@@ -38,21 +38,72 @@ os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 ACTIVE_FLOWS = {}
 
 
+def get_oauth_flow(redirect_uri: str) -> Flow:
+    """
+    Initializes the Google OAuth 2.0 Flow using Cloud Run environment variables
+    (GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET), falling back to local credentials.json.
+    """
+    client_id = os.getenv("GOOGLE_CLIENT_ID")
+    client_secret = os.getenv("GOOGLE_CLIENT_SECRET")
+
+    if client_id and client_secret:
+        client_config = {
+            "web": {
+                "client_id": client_id.strip(),
+                "client_secret": client_secret.strip(),
+                "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+                "token_uri": "https://oauth2.googleapis.com/token",
+                "redirect_uris": [redirect_uri]
+            }
+        }
+        return Flow.from_client_config(
+            client_config=client_config,
+            scopes=SCOPES,
+            redirect_uri=redirect_uri
+        )
+
+    if os.path.exists(CREDENTIALS_PATH):
+        return Flow.from_client_secrets_file(
+            CREDENTIALS_PATH,
+            scopes=SCOPES,
+            redirect_uri=redirect_uri
+        )
+
+    raise HTTPException(
+        status_code=500,
+        detail=(
+            "Server missing OAuth credentials. Set GOOGLE_CLIENT_ID and "
+            "GOOGLE_CLIENT_SECRET in Cloud Run environment variables, or "
+            f"place '{CREDENTIALS_PATH}' in the project root."
+        )
+    )
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Modern lifespan handler replacing deprecated on_event."""
+    port = os.getenv("PORT", "8000")
     print("\n" + "=" * 76)
     print("🚀 CLIENTFLOW ONBOARDING GATEWAY ACTIVE")
     print("=" * 76)
-    print("👉 Gateway is listening for trial form submissions on port 8000.")
+    print(f"👉 Gateway is listening for trial form submissions on port {port}.")
     print("👉 Direct Manual Test Link:")
-    print("   http://127.0.0.1:8000/onboard/connect?client_id=client_primary")
+    print(f"   http://127.0.0.1:{port}/onboard/connect?client_id=client_primary")
     print("=" * 76 + "\n")
     yield
     ACTIVE_FLOWS.clear()
 
 
 app = FastAPI(title="Email Triage Onboarding Gateway", lifespan=lifespan)
+
+
+@app.get("/")
+def health_check():
+    """Root health check endpoint for Cloud Run."""
+    return {
+        "status": "online",
+        "service": "ClientFlow AI Onboarding Gateway"
+    }
 
 
 @app.post("/api/register-trial")
@@ -67,7 +118,7 @@ async def register_trial(
 ):
     """
     Step 1: Client submits the form on index.html.
-    - Sends an email alert to you via Web3Forms (with browser headers to prevent 403).
+    - Sends an email alert via Web3Forms (with browser headers to prevent 403).
     - Creates clients/<slug>.json with their rules.
     - Redirects them directly to the Google OAuth consent screen.
     """
@@ -138,17 +189,7 @@ def start_client_oauth(client_id: str):
     if not client_id or not client_id.strip():
         raise HTTPException(status_code=400, detail="Missing required query parameter: 'client_id'")
 
-    if not os.path.exists(CREDENTIALS_PATH):
-        raise HTTPException(
-            status_code=500,
-            detail=f"Server missing credentials file at '{CREDENTIALS_PATH}'."
-        )
-
-    flow = Flow.from_client_secrets_file(
-        CREDENTIALS_PATH,
-        scopes=SCOPES,
-        redirect_uri=REDIRECT_URI
-    )
+    flow = get_oauth_flow(REDIRECT_URI)
 
     authorization_url, state = flow.authorization_url(
         access_type="offline",
@@ -194,11 +235,7 @@ async def oauth2_callback(request: Request):
         flow = ACTIVE_FLOWS.pop(client_id, None)
 
         if not flow:
-            flow = Flow.from_client_secrets_file(
-                CREDENTIALS_PATH,
-                scopes=SCOPES,
-                redirect_uri=REDIRECT_URI
-            )
+            flow = get_oauth_flow(REDIRECT_URI)
 
         flow.fetch_token(code=code)
         creds = flow.credentials
@@ -229,7 +266,7 @@ async def oauth2_callback(request: Request):
                     height: 100vh;
                     margin: 0;
                 }
-                .card {{
+                .card {
                     background: #ffffff;
                     border: 1px solid #e2e8f0;
                     border-radius: 12px;
@@ -237,8 +274,8 @@ async def oauth2_callback(request: Request):
                     max-width: 420px;
                     text-align: center;
                     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-                }}
-                .badge {{
+                }
+                .badge {
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
@@ -249,23 +286,23 @@ async def oauth2_callback(request: Request):
                     color: #16a34a;
                     font-size: 28px;
                     margin-bottom: 20px;
-                }}
-                h2 {{
+                }
+                h2 {
                     margin: 0 0 10px 0;
                     color: #0f172a;
                     font-size: 22px;
-                }}
-                p {{
+                }
+                p {
                     color: #64748b;
                     font-size: 15px;
                     line-height: 1.5;
                     margin: 0 0 24px 0;
-                }}
-                .footer-text {{
+                }
+                .footer-text {
                     font-size: 13px;
                     color: #94a3b8;
                     margin: 0;
-                }}
+                }
             </style>
         </head>
         <body>
