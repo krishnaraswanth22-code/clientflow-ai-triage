@@ -723,7 +723,7 @@
     </div>
   </section>
 
-  <!-- 9. Done-For-You Pricing -->
+  <!-- 9. Done-For-You Pricing (Professional "Cost-Effective" Copy) -->
   <section id="pricing" class="py-24 px-6 bg-slate-50 border-b border-slate-200">
     <div class="max-w-5xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-14 reveal">
@@ -731,10 +731,10 @@
           Simple, Done-For-You Pricing
         </span>
         <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mt-4 mb-4">
-          85% Cheaper Than Hiring a Virtual Assistant
+          85% More Cost-Effective Than a Virtual Assistant
         </h2>
         <p class="text-slate-600 text-base leading-relaxed">
-          Hiring an assistant costs <strong class="text-slate-900">$1,500 to $2,000/month</strong> (and they still sleep at night). Saving just <strong class="text-emerald-700">one single deal</strong> pays for <strong class="text-slate-900">myclientagent</strong> for years.
+          Hiring an assistant costs <strong class="text-slate-900">$1,500 to $2,000/month</strong> (and leaves inboxes unmonitored overnight). Rescuing just <strong class="text-emerald-700 font-semibold">one single client deal</strong> covers <strong class="text-slate-900">myclientagent</strong> for years.
         </p>
       </div>
 
@@ -1049,6 +1049,7 @@
 
     function switchTier(idx) {
       const s = tierScenarios[idx];
+
       document.getElementById('sim-telemetry-strip').className = s.stripClass;
       const statusEl = document.getElementById('sim-status');
       statusEl.textContent = s.statusText;
